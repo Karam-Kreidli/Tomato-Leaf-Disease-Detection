@@ -1,0 +1,156 @@
+Tomato Leaf Disease Classification using Machine Learning and Deep Learning
+Project Overview
+
+This project develops an image classification system for detecting tomato leaf diseases using both classical machine learning techniques and deep learning models. The objective is to automatically classify tomato leaf images into disease categories by comparing traditional feature-based models with a Convolutional Neural Network (CNN).
+
+The project explores two different approaches:
+
+Classical machine learning models trained on extracted image features.
+
+A deep learning CNN trained directly on image data.
+
+This comparative framework demonstrates the strengths and limitations of feature engineering versus end-to-end deep learning for agricultural image analysis.
+_____________________________________________________________________
+Problem Motivation
+
+Plant diseases significantly affect agricultural productivity and crop quality. Manual inspection of plant leaves is time-consuming, subjective, and difficult to scale across large farms. Automated disease detection using computer vision can help farmers and agricultural systems identify problems early and improve crop management decisions.
+
+Tomato leaf disease detection is particularly challenging due to:
+
+- visual similarity between disease classes
+
+- variations in lighting and background conditions
+
+- texture and color variations across leaves
+
+- imbalance between dataset classes
+
+This project addresses these challenges using both machine learning and deep learning pipelines.
+_____________________________________________________________________
+Dataset:
+
+The dataset used in this project is the Tomato Leaf Disease Image Dataset, loaded using the HuggingFace datasets library.
+
+Dataset Processing
+
+Dataset splits were combined and reorganized.
+
+Labels were remapped into consistent numerical classes.
+
+Data distribution was analyzed for training, validation, and testing sets.
+
+Each image represents a tomato leaf belonging to a specific disease category.
+_____________________________________________________________________
+
+Methodology:
+1. Data Preparation
+
+The dataset was loaded and preprocessed using the following steps:
+
+- Label remapping for consistent indexing
+
+- Dataset merging and splitting
+
+- Class distribution analysis
+
+- Preparation of training, validation, and testing datasets
+
+Class distributions were printed to verify balanced learning conditions.
+_____________________________________________________________________
+Classical Machine Learning Pipeline:
+Feature Extraction
+
+Images were converted into numerical feature representations suitable for machine learning algorithms. Extracted features capture visual patterns such as color and texture information required for classification.
+
+Feature scaling was applied to standardize input values and improve model performance.
+_____________________________________________________________________
+Machine Learning Models
+
+Three traditional classifiers were implemented and compared:
+
+- Random Forest
+
+An ensemble learning method using multiple decision trees to improve classification robustness.
+
+- Support Vector Machine (SVM)
+
+A margin-based classifier effective for high-dimensional feature spaces.
+
+- K-Nearest Neighbors (KNN)
+
+A distance-based algorithm that classifies samples using neighboring data points.
+_____________________________________________________________________
+Model Training:
+
+Hyperparameter tuning was performed using parameter grids to identify optimal configurations. 
+Models were trained using the training dataset and validated before final testing.
+_____________________________________________________________________
+Model Evaluation:
+
+Each model was evaluated using:
+
+- Accuracy score
+
+- Classification report (precision, recall, F1-score)
+
+- Confusion matrix visualization
+
+Results from all classical models were compared to determine performance differences.
+
+_____________________________________________________________________
+Deep Learning Pipeline:
+Image Processing for Deep Learning
+
+Images were prepared for neural network training through:
+
+- resizing and normalization
+
+- batching using dataset loaders
+
+- tensor conversion for neural network input
+
+- Convolutional Neural Network (CNN)
+
+A CNN architecture was implemented to learn image features automatically without manual feature engineering.
+
+The CNN learns hierarchical representations including:
+
+- edges and textures
+
+- leaf patterns
+
+- disease-specific visual characteristics
+_____________________________________________________________________
+CNN Training:
+
+The model was trained using the training dataset and validated during training to monitor generalization performance.
+
+CNN Evaluation
+
+The trained CNN was tested on the test dataset using:
+
+- Accuracy measurement
+
+- Classification report
+
+- Confusion matrix visualization
+
+Predictions were generated by selecting the class with the highest probability output from the network.
+
+
+_____________________________________________________________________
+Results and Discussion:
+
+The project compares classical machine learning models and deep learning performance for tomato leaf disease classification.
+
+Key observations include:
+
+- Machine learning models perform well when meaningful features are extracted.
+
+- Random Forest, SVM, and KNN provide reliable baseline performance.
+
+- The CNN automatically learns complex visual patterns and improves classification capability.
+
+- Confusion matrices show prediction reliability and highlight class-level performance differences.
+
+The comparison demonstrates how deep learning can capture more complex image representations, while traditional models remain computationally efficient alternatives.
